@@ -16,33 +16,36 @@
             <form method="POST" action="#" id="formulario">
                 {%csrf_token%}
                 <div class="row">
-                    {{vehiculo.patente.label}}
-
-                    
+                    {{cliente.rut.label}}
+                    {{cliente.rut}}
                 </div>
 
                 <div class="row">
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" class="form-control" name="nombre" id="nombre">
+                    {{cliente.nombre.label}}
+                    {{cliente.nombre}}
                 </div>
 
                 <div class="row">
-                    <label for="rut">Rut: </label>
-                    <input type="text" class="form-control" name="rut" id="rut">
+                    {{cliente.apellido.label}}
+                    {{cliente.apellido}}
                 </div>
 
                 <div class="row">
-                    <label for="rut">Rut: </label>
-                    <input type="text" class="form-control" name="rut" id="rut">
+                    {{cliente.email.label}}
+                    {{cliente.email}}
                 </div>
 
                 <div class="row">
-                    <label for="rut">Rut: </label>
-                    <input type="text" class="form-control" name="rut" id="rut">
+                    {{cliente.categoria.label}}
+                    {{cliente.categoria}}
+                </div>
+
+                <div class="row">
+                    <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
                 </div>
             </form>
         </div>
-
     </div>
 </body>
 </html>
