@@ -36,3 +36,9 @@ def form_mod_cliente(request,id):
             formulario.save()
             return redirect('ver')
     return render(request, 'hosting/form_mod_cliente.html', datos)
+
+def form_del_cliente(request, id):
+    cliente = Cliente.objects.get(rut=id)
+    cliente.delete()
+    return redirect(to="clientes")
+    
