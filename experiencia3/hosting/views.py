@@ -41,4 +41,3 @@ def form_del_cliente(request, id):
     cliente = Cliente.objects.get(rut=id)
     cliente.delete()
     return redirect(to="clientes")
-    
