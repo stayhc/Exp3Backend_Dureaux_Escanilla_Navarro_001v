@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm, widgets
-from .models import Cliente
+from .models import Cliente, Categoria
 
 class ClienteForm(ModelForm):
     class Meta:

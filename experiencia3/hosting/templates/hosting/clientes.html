@@ -86,6 +86,7 @@
                         <td>{{ve.apellido}}</td>
                         <td>{{ve.email}}</td>
                         <td>{{ve.categoria}}</td>
+                        <td><a href="{% url 'form_mod_cliente' ve.rut%}" class="btn btn-primary">Modificar  </a></td>
                     </tr>
                 {%endfor%}
 

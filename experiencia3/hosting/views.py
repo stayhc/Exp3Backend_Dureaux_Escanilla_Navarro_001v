@@ -12,7 +12,7 @@ def galeria(request):
 def clientes(request):
     
     clientes = Cliente.objects.all()
-    return render(request, 'clientes.html', context={'datos': clientes})
+    return render(request, 'hosting/clientes.html', context={'datos': clientes})
 
 def crearClientes(request):
     if request.method=='POST':
@@ -23,3 +23,16 @@ def crearClientes(request):
     else:
         cliente=ClienteForm()
     return render(request, 'hosting/form_crearcliente.html', {'cliente': cliente})
+
+def form_mod_cliente(request,id):
+    cliente = Cliente.objects.get(rut=id)
+
+    datos ={
+        'form': ClienteForm(instance=cliente)
+    }
+    if request.method == 'POST': 
+        formulario = ClienteForm(data=request.POST, instance = cliente)
+        if formulario.is_valid: 
+            formulario.save()
+            return redirect('ver')
+    return render(request, 'hosting/form_mod_cliente.html', datos)
